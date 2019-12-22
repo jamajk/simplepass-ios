@@ -60,6 +60,7 @@ class ViewController: UIViewController {
         infoLabel.isHidden = true
         infoLabel.text = "  "
         colorView.layer.cornerRadius = 10
+        genButton.layer.cornerRadius = 5
     }
 }
 
