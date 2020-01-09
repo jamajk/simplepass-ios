@@ -7,10 +7,13 @@
 //
 
 import UIKit
-
+protocol callFunc {
+    func backFromSave()
+}
 class ViewController: UIViewController {
 
     let gen = Generator()
+    let list = PasswordList()
     
     @IBOutlet weak var passLabel: UILabel!
     @IBOutlet weak var lenLabel: UILabel!
@@ -42,14 +45,6 @@ class ViewController: UIViewController {
             self.infoLabel.isHidden = true
         }
     }
-    @IBAction func saveClick(_ sender: Any) {
-        // TODO zapisywanie haseł gdzieś
-        infoLabel.text = "The password has been saved."
-        infoLabel.isHidden = false
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.infoLabel.isHidden = true
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,5 +57,24 @@ class ViewController: UIViewController {
         colorView.layer.cornerRadius = 10
         genButton.layer.cornerRadius = 5
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    super.prepare(for: segue, sender: sender)
+    if segue.identifier == "addPassword" {
+        guard let controller = segue.destination as? AddingPasswordController else { fatalError("Invalid segue destination") }
+        controller.password = passLabel.text ?? "Couldn't load password"
+        controller.delegate = self
+        }
+    }
+}
+
+extension ViewController: callFunc {
+    func backFromSave() {
+           infoLabel.text = "The password has been saved."
+           infoLabel.isHidden = false
+           DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+               self.infoLabel.isHidden = true
+           }
+       }
 }
 

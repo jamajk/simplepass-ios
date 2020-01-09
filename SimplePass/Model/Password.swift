@@ -13,3 +13,17 @@ struct Password {
     var username: String
     var password: String
 }
+
+extension Password {
+    init() {
+        self.name = "defaultName"
+        self.username = "defaultUsername"
+        self.password = "defaultPassword"
+    }
+    
+    init(name: String, user: String, password: String) {
+        self.name = name
+        self.username = user
+        self.password = password
+    }
+}
