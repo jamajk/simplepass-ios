@@ -13,7 +13,7 @@ protocol callFunc {
 class ViewController: UIViewController {
 
     let gen = Generator()
-    let list = PasswordList()
+    var passArray = PasswordList()
     
     @IBOutlet weak var passLabel: UILabel!
     @IBOutlet weak var lenLabel: UILabel!
@@ -45,6 +45,15 @@ class ViewController: UIViewController {
             self.infoLabel.isHidden = true
         }
     }
+    @IBAction func showClick(_ sender: Any) {
+        let alert = UIAlertController(title: "Empty password list", message: "There are no passwords to show", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil ))
+        
+        if passArray.count < 1 {
+            self.present(alert, animated: true)
+            //navigationController?.popViewController(animated: true) //that shit dont work
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +72,12 @@ class ViewController: UIViewController {
     if segue.identifier == "addPassword" {
         guard let controller = segue.destination as? AddingPasswordController else { fatalError("Invalid segue destination") }
         controller.password = passLabel.text ?? "Couldn't load password"
+        controller.list = passArray
         controller.delegate = self
+        }
+    else if segue.identifier == "showList" {
+    guard let controller = segue.destination as? ListViewController else { fatalError("Invalid segue destination") }
+        controller.passList = passArray
         }
     }
 }

@@ -10,6 +10,8 @@ import UIKit
 
 class PasswordCell: UITableViewCell {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    
     override func prepareForReuse() {
         super.prepareForReuse()
     }

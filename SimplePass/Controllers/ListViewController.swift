@@ -12,19 +12,25 @@ class ListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var passList: PasswordList?
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        tableView.dataSource = self
     }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        if segue.identifier == "showPasswordDetails" {
+            guard let passwordDetails = segue.destination as? DetailsViewController, let cell = sender as? PasswordCell else { fatalError("Invalid segue destination") }
+
+           guard let indexPath = tableView.indexPath(for: cell) else { print("Unknown cell tapped"); return }
+            passwordDetails.gotDetails = passList!.list[indexPath.row]
+           
+        }
     }
-    
-    
     
 
 }
@@ -36,11 +42,13 @@ extension ListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return passList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: "PASSCELL", for: indexPath) as? PasswordCell else { fatalError("Incorrect cell type") }
+        
+        cell.nameLabel.text = passList!.list[indexPath.row].name
     
     return cell
     }
