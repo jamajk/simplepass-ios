@@ -16,6 +16,10 @@ class AddingPasswordController: UIViewController {
     @IBOutlet weak var userField: UITextField!
     @IBOutlet weak var passField: UITextField!
     
+    @IBAction func cancelClick(_ sender: Any) {
+        presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func addClick(_ sender: Any) {
         let alert = UIAlertController(title: "Empty field", message: "Some field is empty and it cannot be [placeholder message]", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: "Default action"), style: .default, handler: nil ))
@@ -28,7 +32,7 @@ class AddingPasswordController: UIViewController {
             list?.addPassword(name: nameField.text!, user: userField.text!, password: passField.text!)
             
             self.delegate?.backFromSave()
-            navigationController?.popViewController(animated: true)
+            presentingViewController?.dismiss(animated: true, completion: nil)
         }
     }
     
