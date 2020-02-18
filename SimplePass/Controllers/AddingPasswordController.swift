@@ -7,13 +7,7 @@
 //
 
 import UIKit
-/*
-enum KeychainError: Error {
-    case noPassword
-    case unexpectedPasswordData
-    case unhandledError(status: OSStatus)
-}
-*/
+
 class AddingPasswordController: UIViewController {
     
     var list: PasswordList?
@@ -24,25 +18,12 @@ class AddingPasswordController: UIViewController {
     
     @IBAction func addClick(_ sender: Any) {
         let alert = UIAlertController(title: "Empty field", message: "Some field is empty and it cannot be [placeholder message]", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil ))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: "Default action"), style: .default, handler: nil ))
         
         if nameField.text?.isEmpty == true || userField.text?.isEmpty == true {
             self.present(alert, animated: true)
         }
         else {
-            /*
-            let account = userField.text!
-            let password = passField.text!
-            let server = nameField.text!
-            let query: [String: Any] = [kSecClass as String: kSecClassInternetPassword,
-                                        kSecAttrAccount as String: account,
-                                        kSecAttrServer as String: server,
-                                        kSecValueData as String: password]
-             let status = SecItemAdd(query as CFDictionary, nil)
-  //          guard status == errSecSuccess else { throw KeychainError.unhandledError(status: status) }
- */ //keychain, not what i want to do here tbh
-            
-            
             //adding to the local array
             list?.addPassword(name: nameField.text!, user: userField.text!, password: passField.text!)
             
@@ -58,5 +39,6 @@ class AddingPasswordController: UIViewController {
         super.viewDidLoad()
         passField.text = password
     }
+    
     
 }

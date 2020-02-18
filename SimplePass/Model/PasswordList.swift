@@ -16,6 +16,11 @@ class PasswordList {
         list.append(Password(name: name, user: user, password: password))
         count += 1
     }
+    
+    func deletePassword(index: Int) {
+        list.remove(at: index)
+        count -= 1
+    }
 }
 
 

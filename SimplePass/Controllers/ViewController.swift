@@ -1,5 +1,4 @@
 //
-//  ViewController.swift
 //  SimplePass
 //
 //  Created by Jakub Majkowski on 04/12/2019.
@@ -43,15 +42,6 @@ class ViewController: UIViewController {
         infoLabel.isHidden = false
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.infoLabel.isHidden = true
-        }
-    }
-    @IBAction func showClick(_ sender: Any) {
-        let alert = UIAlertController(title: "Empty password list", message: "There are no passwords to show", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil ))
-        
-        if passArray.count < 1 {
-            self.present(alert, animated: true)
-            //navigationController?.popViewController(animated: true) //that shit dont work
         }
     }
     

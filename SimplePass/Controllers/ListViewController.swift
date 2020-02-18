@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol backComm {
+    func Delete(index: Int)
+}
+
 class ListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -18,6 +22,18 @@ class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        
+        let alert = UIAlertController(title: "Empty password list", message: "There are no passwords to show", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: "Default action"), style: .default, handler: {action in self.navigationController?.popViewController(animated: true)}))
+        
+        if passList!.count < 1 {
+            self.present(alert, animated: true)
+        }
+        //TODO Update the PassList and its count to show the passwords loaded from keychain/memory
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
 
     
@@ -28,7 +44,8 @@ class ListViewController: UIViewController {
 
            guard let indexPath = tableView.indexPath(for: cell) else { print("Unknown cell tapped"); return }
             passwordDetails.gotDetails = passList!.list[indexPath.row]
-           
+            passwordDetails.delegate = self
+            passwordDetails.number = indexPath.row
         }
     }
     
@@ -51,5 +68,11 @@ extension ListViewController: UITableViewDataSource {
         cell.nameLabel.text = passList!.list[indexPath.row].name
     
     return cell
+    }
+}
+
+extension ListViewController: backComm {
+    func Delete(index: Int) {
+        passList?.deletePassword(index: index)
     }
 }
