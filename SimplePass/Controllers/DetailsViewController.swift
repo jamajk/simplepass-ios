@@ -29,7 +29,6 @@ class DetailsViewController: UIViewController {
     }
     
     @IBAction func delClick(_ sender: Any) {
-        //TODO Add the "Are you sure?" alert and confirmation
         let confirmation = UIAlertController(title: "Confirm removal", message: "Are you sure that you want to delete the current entry?", preferredStyle: .alert)
         confirmation.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { action in
             do {

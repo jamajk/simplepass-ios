@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddingPasswordController: UIViewController {
+class AddingPasswordController: UIViewController, UITextFieldDelegate {
     
     var list: PasswordList?
 
@@ -42,7 +42,14 @@ class AddingPasswordController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         passField.text = password
+        self.nameField.delegate = self
+        self.userField.delegate = self
+        self.passField.delegate = self
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
 }
