@@ -47,6 +47,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        passArray.decode()
         lenLabel.text = String(gen.length)
         passLabel.isHidden = true
         copyButton.isHidden = true

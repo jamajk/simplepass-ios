@@ -23,14 +23,11 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var passLabel: UILabel!
-
-    @IBAction func saveClick(_ sender: Any) {
-        addToKeychain()
-    }
+    
     
     @IBAction func delClick(_ sender: Any) {
-        let confirmation = UIAlertController(title: "Confirm removal", message: "Are you sure that you want to delete the current entry?", preferredStyle: .alert)
-        confirmation.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { action in
+        let confirmation = UIAlertController(title: "Confirm removal", message: "Are you sure that you want to delete the current entry?", preferredStyle: .actionSheet)
+        confirmation.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { action in
             do {
                 guard self.number != nil else {throw KeychainError.unexpectedPasswordData}
                 self.delegate?.Delete(index: self.number!)
@@ -40,7 +37,7 @@ class DetailsViewController: UIViewController {
                 print("Number is nil")
             }
         }))
-        confirmation.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        confirmation.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(confirmation, animated: true)
     }
     

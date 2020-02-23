@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B0193A42402FFBA00C5504B /* passwordlist.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B0193A32402FFBA00C5504B /* passwordlist.json */; };
 		3B14647E23B7A515000159C9 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B14647D23B7A515000159C9 /* ListViewController.swift */; };
 		3B14648023B7A58B000159C9 /* PasswordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B14647F23B7A58B000159C9 /* PasswordCell.swift */; };
 		3B14648223B7A74F000159C9 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B14648123B7A74F000159C9 /* DetailsViewController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B0193A32402FFBA00C5504B /* passwordlist.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = passwordlist.json; sourceTree = "<group>"; };
 		3B14647D23B7A515000159C9 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		3B14647F23B7A58B000159C9 /* PasswordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCell.swift; sourceTree = "<group>"; };
 		3B14648123B7A74F000159C9 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			children = (
 				3B486EA32397E5C7002C74A8 /* AppDelegate.swift */,
 				3B486EA52397E5C7002C74A8 /* SceneDelegate.swift */,
+				3B0193A32402FFBA00C5504B /* passwordlist.json */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B0193A42402FFBA00C5504B /* passwordlist.json in Resources */,
 				3B486EB02397E5C8002C74A8 /* LaunchScreen.storyboard in Resources */,
 				3B486EAD2397E5C8002C74A8 /* Assets.xcassets in Resources */,
 				3B486EAB2397E5C7002C74A8 /* Main.storyboard in Resources */,
@@ -345,7 +349,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jamajk.SimplePass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -362,7 +366,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jamajk.SimplePass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
