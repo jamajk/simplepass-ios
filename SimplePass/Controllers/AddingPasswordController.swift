@@ -43,6 +43,9 @@ class AddingPasswordController: UIViewController, UITextFieldDelegate {
         self.nameField.delegate = self
         self.userField.delegate = self
         self.passField.delegate = self
+        
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        view.addGestureRecognizer(tap)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
