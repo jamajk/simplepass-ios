@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum KeychainError: Error {
+enum AppError: Error {
     case noPassword
     case unexpectedPasswordData
     case unhandledError(status: OSStatus)
@@ -29,7 +29,7 @@ class DetailsViewController: UIViewController {
         let confirmation = UIAlertController(title: "Confirm removal", message: "Are you sure that you want to delete the current entry?", preferredStyle: .actionSheet)
         confirmation.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { action in
             do {
-                guard self.number != nil else {throw KeychainError.unexpectedPasswordData}
+                guard self.number != nil else {throw AppError.unexpectedPasswordData}
                 self.delegate?.Delete(index: self.number!)
                 self.navigationController?.popViewController(animated: true)
             }
@@ -46,30 +46,6 @@ class DetailsViewController: UIViewController {
         let alert = UIAlertController(title: "", message: "Password has been copied", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: "Default action"), style: .default, handler: nil ))
             self.present(alert, animated: true)
-    }
-    
-    func addToKeychain() {
-        let account = userLabel.text!
-        let password = passLabel.text!
-        let server = nameLabel.text!
-        
-        let query: [String: Any] = [kSecClass as String: kSecClassInternetPassword,
-                                   kSecAttrAccount as String: account,
-                                   kSecAttrServer as String: server,
-                                   kSecValueData as String: password]
-        do {
-            let status = SecItemAdd(query as CFDictionary, nil)
-            guard status == errSecSuccess else {throw KeychainError.unhandledError(status: status) }
-            let alert = UIAlertController(title: "Password added", message: "Your password has been added to Keychain", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: "Default action"), style: .default, handler: nil ))
-            self.present(alert, animated: true)
-        }
-        catch is KeychainError {
-            print("Error with Keychain")
-        }
-        catch {
-            print("Unknown error")
-        }
     }
     
     override func viewDidLoad() {
