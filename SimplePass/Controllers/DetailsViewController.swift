@@ -26,7 +26,7 @@ class DetailsViewController: UIViewController {
     
     
     @IBAction func delClick(_ sender: Any) {
-        let confirmation = UIAlertController(title: "Confirm removal", message: "Are you sure that you want to delete the current entry?", preferredStyle: .actionSheet)
+        let confirmation = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         confirmation.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { action in
             do {
                 guard self.number != nil else {throw AppError.unexpectedPasswordData}
