@@ -14,7 +14,6 @@
 		3B21AA3323AF92D90056DD54 /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B21AA3223AF92D90056DD54 /* Password.swift */; };
 		3B23CD3423C61D2F00CBE344 /* AddingPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B23CD3323C61D2F00CBE344 /* AddingPasswordController.swift */; };
 		3B26359923C60D0D005AFDD3 /* PasswordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B26359823C60D0D005AFDD3 /* PasswordList.swift */; };
-		3B40FBF42406CA8200AD6F99 /* Key-180x180.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B40FBF32406CA8200AD6F99 /* Key-180x180.png */; };
 		3B486EA42397E5C7002C74A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B486EA32397E5C7002C74A8 /* AppDelegate.swift */; };
 		3B486EA62397E5C7002C74A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B486EA52397E5C7002C74A8 /* SceneDelegate.swift */; };
 		3B486EA82397E5C7002C74A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B486EA72397E5C7002C74A8 /* ViewController.swift */; };
@@ -22,6 +21,7 @@
 		3B486EAD2397E5C8002C74A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B486EAC2397E5C8002C74A8 /* Assets.xcassets */; };
 		3B486EB02397E5C8002C74A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B486EAE2397E5C8002C74A8 /* LaunchScreen.storyboard */; };
 		3B486EB82397E623002C74A8 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B486EB72397E623002C74A8 /* Generator.swift */; };
+		3BBF246F240A867800007496 /* Key-RC.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BBF246E240A867800007496 /* Key-RC.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +32,6 @@
 		3B21AA3223AF92D90056DD54 /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
 		3B23CD3323C61D2F00CBE344 /* AddingPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingPasswordController.swift; sourceTree = "<group>"; };
 		3B26359823C60D0D005AFDD3 /* PasswordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordList.swift; sourceTree = "<group>"; };
-		3B40FBF32406CA8200AD6F99 /* Key-180x180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Key-180x180.png"; sourceTree = "<group>"; };
 		3B486EA02397E5C7002C74A8 /* SimplePass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimplePass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B486EA32397E5C7002C74A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B486EA52397E5C7002C74A8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +41,7 @@
 		3B486EAF2397E5C8002C74A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B486EB12397E5C8002C74A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B486EB72397E623002C74A8 /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
+		3BBF246E240A867800007496 /* Key-RC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Key-RC.png"; path = "SimplePass/Misc/Key-RC.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +58,6 @@
 		3B21AA3123AF89620056DD54 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
-				3B40FBF32406CA8200AD6F99 /* Key-180x180.png */,
 				3B486EA32397E5C7002C74A8 /* AppDelegate.swift */,
 				3B486EA52397E5C7002C74A8 /* SceneDelegate.swift */,
 				3B0193A32402FFBA00C5504B /* passwordlist.json */,
@@ -99,6 +98,7 @@
 		3BCA588E2397FA6D00755C55 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3BBF246E240A867800007496 /* Key-RC.png */,
 				3B486EB72397E623002C74A8 /* Generator.swift */,
 				3B21AA3223AF92D90056DD54 /* Password.swift */,
 				3B14647F23B7A58B000159C9 /* PasswordCell.swift */,
@@ -180,7 +180,7 @@
 				3B486EB02397E5C8002C74A8 /* LaunchScreen.storyboard in Resources */,
 				3B486EAD2397E5C8002C74A8 /* Assets.xcassets in Resources */,
 				3B486EAB2397E5C7002C74A8 /* Main.storyboard in Resources */,
-				3B40FBF42406CA8200AD6F99 /* Key-180x180.png in Resources */,
+				3BBF246F240A867800007496 /* Key-RC.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
