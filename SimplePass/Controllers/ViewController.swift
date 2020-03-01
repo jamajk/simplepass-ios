@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import LocalAuthentication
+
 protocol callFunc {
     func backFromSave()
 }
@@ -14,6 +16,8 @@ class ViewController: UIViewController {
     let gen = Generator()
     var passArray = PasswordList()
     
+    var context = LAContext()
+    
     @IBOutlet weak var passLabel: UILabel!
     @IBOutlet weak var lenLabel: UILabel!
     @IBOutlet weak var copyButton: UIButton!
@@ -21,7 +25,25 @@ class ViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var genButton: UIButton!
+    @IBOutlet weak var showButton: UIButton!
     
+    @IBAction func showClick(_ sender: UIButton) {
+        var error: NSError?
+        context = LAContext()
+        if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) {
+            let reason = "Provide authentication to view passwords"
+            context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason ) { success, error in
+                
+                if success {
+                    DispatchQueue.main.async { [unowned self] in
+                        self.performSegue(withIdentifier: "showList", sender: nil)
+                    }
+                } else {
+                    print(error?.localizedDescription ?? "Failed to authenticate")
+                }
+            }
+        }
+    }
     @IBAction func genClick(_ sender: UIButton) {
         passLabel.text = gen.generate()
         passLabel.isHidden = false
@@ -70,6 +92,13 @@ class ViewController: UIViewController {
     guard let controller = segue.destination as? ListViewController else { fatalError("Invalid segue destination") }
         controller.passList = passArray
         }
+    }
+
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "showList" {
+            return false
+        }
+        return true
     }
 }
 

@@ -58,6 +58,7 @@
 		3B21AA3123AF89620056DD54 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				3BBF246E240A867800007496 /* Key-RC.png */,
 				3B486EA32397E5C7002C74A8 /* AppDelegate.swift */,
 				3B486EA52397E5C7002C74A8 /* SceneDelegate.swift */,
 				3B0193A32402FFBA00C5504B /* passwordlist.json */,
@@ -98,7 +99,6 @@
 		3BCA588E2397FA6D00755C55 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3BBF246E240A867800007496 /* Key-RC.png */,
 				3B486EB72397E623002C74A8 /* Generator.swift */,
 				3B21AA3223AF92D90056DD54 /* Password.swift */,
 				3B14647F23B7A58B000159C9 /* PasswordCell.swift */,
