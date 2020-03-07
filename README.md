@@ -1,4 +1,4 @@
-# simplepass-ios 
+# SimplePass
 <p align="center">
   <img src="https://raw.githubusercontent.com/jamajk/simplepass-ios/master/SimplePass/Misc/Key-RC.png" width="180" title="App logo">
 </p>
