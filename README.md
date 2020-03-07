@@ -1,4 +1,7 @@
-# simplepass-ios
+# simplepass-ios 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jamajk/simplepass-ios/master/SimplePass/Misc/Key-RC.png" width="180" title="App logo">
+</p>
 A simple iOS app for creating and storing passwords, created mostly for my own use and learning purposes.
 
 Right now it supports only iPhones.
