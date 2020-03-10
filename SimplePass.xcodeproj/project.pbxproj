@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B0193A42402FFBA00C5504B /* passwordlist.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B0193A32402FFBA00C5504B /* passwordlist.json */; };
 		3B14647E23B7A515000159C9 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B14647D23B7A515000159C9 /* ListViewController.swift */; };
 		3B14648023B7A58B000159C9 /* PasswordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B14647F23B7A58B000159C9 /* PasswordCell.swift */; };
 		3B14648223B7A74F000159C9 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B14648123B7A74F000159C9 /* DetailsViewController.swift */; };
@@ -21,11 +20,11 @@
 		3B486EAD2397E5C8002C74A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B486EAC2397E5C8002C74A8 /* Assets.xcassets */; };
 		3B486EB02397E5C8002C74A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B486EAE2397E5C8002C74A8 /* LaunchScreen.storyboard */; };
 		3B486EB82397E623002C74A8 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B486EB72397E623002C74A8 /* Generator.swift */; };
+		3B88FCB92417CEF100AE688E /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 3B88FCB82417CEF100AE688E /* KeychainAccess */; };
 		3BBF246F240A867800007496 /* Key-RC.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BBF246E240A867800007496 /* Key-RC.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3B0193A32402FFBA00C5504B /* passwordlist.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = passwordlist.json; sourceTree = "<group>"; };
 		3B14647D23B7A515000159C9 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		3B14647F23B7A58B000159C9 /* PasswordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCell.swift; sourceTree = "<group>"; };
 		3B14648123B7A74F000159C9 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B88FCB92417CEF100AE688E /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,7 +61,6 @@
 				3BBF246E240A867800007496 /* Key-RC.png */,
 				3B486EA32397E5C7002C74A8 /* AppDelegate.swift */,
 				3B486EA52397E5C7002C74A8 /* SceneDelegate.swift */,
-				3B0193A32402FFBA00C5504B /* passwordlist.json */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -134,6 +133,9 @@
 			dependencies = (
 			);
 			name = SimplePass;
+			packageProductDependencies = (
+				3B88FCB82417CEF100AE688E /* KeychainAccess */,
+			);
 			productName = SimplePass;
 			productReference = 3B486EA02397E5C7002C74A8 /* SimplePass.app */;
 			productType = "com.apple.product-type.application";
@@ -162,6 +164,9 @@
 				Base,
 			);
 			mainGroup = 3B486E972397E5C7002C74A8;
+			packageReferences = (
+				3B88FCB72417CEF100AE688E /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+			);
 			productRefGroup = 3B486EA12397E5C7002C74A8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -176,7 +181,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B0193A42402FFBA00C5504B /* passwordlist.json in Resources */,
 				3B486EB02397E5C8002C74A8 /* LaunchScreen.storyboard in Resources */,
 				3B486EAD2397E5C8002C74A8 /* Assets.xcassets in Resources */,
 				3B486EAB2397E5C7002C74A8 /* Main.storyboard in Resources */,
@@ -345,6 +349,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DNR33FGX8A;
 				INFOPLIST_FILE = SimplePass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -362,6 +367,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DNR33FGX8A;
 				INFOPLIST_FILE = SimplePass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -396,6 +402,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3B88FCB72417CEF100AE688E /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3B88FCB82417CEF100AE688E /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3B88FCB72417CEF100AE688E /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3B486E982397E5C7002C74A8 /* Project object */;
 }

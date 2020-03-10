@@ -7,10 +7,13 @@
 //
 
 import Foundation
+import KeychainAccess
 
 class PasswordList {
     var list: [Password] = []
     var count = 0
+    
+    let keychain = Keychain(service: "com.jamajk.simplepass")
     
     func addPassword(name: String, user: String, password: String) {
         list.append(Password(name: name, user: user, password: password))
@@ -25,43 +28,28 @@ class PasswordList {
     }
     
     func decode() {
-        guard let url = Bundle.main.url(forResource: "passwordlist", withExtension: "json") else {
-                print("Error with getting url")
-                return
-        }
         
-        guard let data = try? Data(contentsOf: url) else {
-            print("Error with getting data")
-            return
-        }
-        
-        let decoder = JSONDecoder()
-        do{
-            list = try decoder.decode([Password].self, from: data)
-            count = list.count
-        } catch {
-            print(error.localizedDescription)
+        if let token = keychain["simplepass"] {
+            let decoder = JSONDecoder()
+            do{
+                if let data: Data = token.data(using: .utf8) {
+                    list = try decoder.decode([Password].self, from: data)
+                    count = list.count
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
         }
     }
     
     func encode() {
-        guard let url = Bundle.main.url(forResource: "passwordlist", withExtension: "json") else {
-                print("Error with getting url")
-                return
-        }
-        
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
 
         do {
-                let file: FileHandle? = try FileHandle(forUpdating: url)
-                let jsonData = try encoder.encode(list)
-                if let jsonString = String(data: jsonData, encoding: .utf8) {
-                let data = (jsonString as
-                NSString).data(using: String.Encoding.utf8.rawValue)
-                file?.truncateFile(atOffset: 0)
-                file?.write(data!)
-                file?.closeFile()
+            let jsonData = try encoder.encode(list)
+            if let jsonString = String(data: jsonData, encoding: .utf8) {
+                try keychain.set(jsonString, key: "simplepass")
             }
         } catch {
             print(error.localizedDescription)
