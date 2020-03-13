@@ -29,7 +29,6 @@ class ListViewController: UIViewController {
         if passList!.count < 1 {
             self.present(alert, animated: true)
         }
-        //TODO Update the PassList and its count to show the passwords loaded from keychain/memory
     }
     
     override func viewWillAppear(_ animated: Bool) {

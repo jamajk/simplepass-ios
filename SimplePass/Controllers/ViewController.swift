@@ -60,7 +60,7 @@ class ViewController: UIViewController {
     }
     @IBAction func copyClick(_ sender: Any) {
         UIPasteboard.general.string = passLabel.text
-        infoLabel.text = "The password has been copied to your pasteboard."
+        infoLabel.text = "The password has been copied."
         infoLabel.isHidden = false
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.infoLabel.isHidden = true
