@@ -33,4 +33,4 @@ All passwords are saved in Keychain, so the data is always accessible.
 After pressing the Show saved passwords button on the main screen and successfully authenticating the user using FaceID, TouchID or passcode, the password list is presented, from which gives access to the passwords' previously saved details.
 
 ![Password details](Misc/passdetails.png)
-From the details screen it is possible to copy the desired password or delete the record, after confirming that this was the desired action.
+From the details screen it is possible to copy the chosen password or delete the record, after confirming that this was the desired action.
