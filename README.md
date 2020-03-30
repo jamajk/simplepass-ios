@@ -22,7 +22,7 @@ The main screen contains buttons for generating and viewing already stored passw
 Upon pressing the Generate button the password appears inside of the gray label, along two additional buttons allowing the user to save the password or just copy it to the pasteboard.
 
 Pressing the Save button will present a modal that will allow the user to enter the password info and add it to the list.
-While the password is filled automatically, it is still possible to edit it.
+While the password field is filled automatically, it is still possible to edit it.
 
 ![Saving the password](Misc/passsaving.png)
 
