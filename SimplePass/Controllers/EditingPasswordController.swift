@@ -59,6 +59,12 @@ class EditingPasswordController: UIViewController {
         nameField.text = name
         userField.text = username
         passField.text = password
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        view.addGestureRecognizer(tap)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
