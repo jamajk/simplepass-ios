@@ -78,6 +78,7 @@ class ViewController: UIViewController {
         infoLabel.text = "  "
         colorView.layer.cornerRadius = 10
         genButton.layer.cornerRadius = 5
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -27,6 +27,12 @@ class PasswordList {
         encode()
     }
     
+    func editPassword(index: Int, password: Password) {
+        list.remove(at: index)
+        list.insert(password, at: index)
+        encode()
+    }
+    
     func decode() {
         
         if let token = keychain["simplepass"] {

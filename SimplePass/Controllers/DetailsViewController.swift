@@ -14,6 +14,11 @@ enum AppError: Error {
     case unhandledError(status: OSStatus)
 }
 
+protocol EditUpdate {
+    func passOnEditTask()
+    func updateDetails(newDetails: Password)
+}
+
 class DetailsViewController: UIViewController {
     
     var gotDetails: Password?
@@ -50,6 +55,9 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         nameLabel.text = gotDetails?.name ?? "error"
         userLabel.text = gotDetails?.username ?? "error"
         passLabel.text = gotDetails?.password ?? "error"
@@ -58,5 +66,28 @@ class DetailsViewController: UIViewController {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        guard let controller = segue.destination as? EditingPasswordController else { fatalError("Invalid segue destination")
+        }
+        controller.password = gotDetails?.password ?? "Couldn't load"
+        controller.username = gotDetails?.username ?? "Couldn't load"
+        controller.name = gotDetails?.name ?? "Couldn't load"
+        controller.index = number
+        controller.delegate = self
+    }
 
+}
+
+extension DetailsViewController: EditUpdate {
+    func passOnEditTask() {
+        guard let newPassword = gotDetails else { return }
+        guard number != nil else { return }
+        self.delegate?.Edit(index: number!, password: newPassword)
+    }
+    
+    func updateDetails(newDetails: Password) {
+        gotDetails = newDetails
+    }
 }

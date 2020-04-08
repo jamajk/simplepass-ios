@@ -10,6 +10,7 @@ import UIKit
 
 protocol backComm {
     func Delete(index: Int)
+    func Edit(index: Int, password: Password)
 }
 
 class ListViewController: UIViewController {
@@ -73,5 +74,9 @@ extension ListViewController: UITableViewDataSource {
 extension ListViewController: backComm {
     func Delete(index: Int) {
         passList?.deletePassword(index: index)
+    }
+    
+    func Edit(index: Int, password: Password) {
+        passList?.editPassword(index: index, password: password)
     }
 }

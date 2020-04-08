@@ -11,6 +11,7 @@
 		3B14648023B7A58B000159C9 /* PasswordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B14647F23B7A58B000159C9 /* PasswordCell.swift */; };
 		3B14648223B7A74F000159C9 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B14648123B7A74F000159C9 /* DetailsViewController.swift */; };
 		3B21AA3323AF92D90056DD54 /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B21AA3223AF92D90056DD54 /* Password.swift */; };
+		3B23C7B224352363000B795D /* EditingPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B23C7B124352363000B795D /* EditingPasswordController.swift */; };
 		3B23CD3423C61D2F00CBE344 /* AddingPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B23CD3323C61D2F00CBE344 /* AddingPasswordController.swift */; };
 		3B26359923C60D0D005AFDD3 /* PasswordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B26359823C60D0D005AFDD3 /* PasswordList.swift */; };
 		3B486EA42397E5C7002C74A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B486EA32397E5C7002C74A8 /* AppDelegate.swift */; };
@@ -29,6 +30,7 @@
 		3B14647F23B7A58B000159C9 /* PasswordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCell.swift; sourceTree = "<group>"; };
 		3B14648123B7A74F000159C9 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		3B21AA3223AF92D90056DD54 /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
+		3B23C7B124352363000B795D /* EditingPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingPasswordController.swift; sourceTree = "<group>"; };
 		3B23CD3323C61D2F00CBE344 /* AddingPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingPasswordController.swift; sourceTree = "<group>"; };
 		3B26359823C60D0D005AFDD3 /* PasswordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordList.swift; sourceTree = "<group>"; };
 		3B486EA02397E5C7002C74A8 /* SimplePass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimplePass.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +115,7 @@
 				3B14647D23B7A515000159C9 /* ListViewController.swift */,
 				3B14648123B7A74F000159C9 /* DetailsViewController.swift */,
 				3B23CD3323C61D2F00CBE344 /* AddingPasswordController.swift */,
+				3B23C7B124352363000B795D /* EditingPasswordController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				3B23CD3423C61D2F00CBE344 /* AddingPasswordController.swift in Sources */,
 				3B486EB82397E623002C74A8 /* Generator.swift in Sources */,
 				3B14647E23B7A515000159C9 /* ListViewController.swift in Sources */,
+				3B23C7B224352363000B795D /* EditingPasswordController.swift in Sources */,
 				3B26359923C60D0D005AFDD3 /* PasswordList.swift in Sources */,
 				3B14648223B7A74F000159C9 /* DetailsViewController.swift in Sources */,
 				3B21AA3323AF92D90056DD54 /* Password.swift in Sources */,
