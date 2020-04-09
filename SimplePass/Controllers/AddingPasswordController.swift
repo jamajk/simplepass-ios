@@ -31,8 +31,8 @@ class AddingPasswordController: UIViewController, UITextFieldDelegate {
         
         func check(field: UITextField, label: UILabel) {
             if field.text?.isEmpty == true {
-                label.textColor = .red
-            } else if label.textColor == .red {
+                label.textColor = .systemRed
+            } else if label.textColor == .systemRed {
                 label.textColor = .label
             }
         }
@@ -62,6 +62,12 @@ class AddingPasswordController: UIViewController, UITextFieldDelegate {
         
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
         view.addGestureRecognizer(tap)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if traitCollection.userInterfaceStyle == .dark {
+        view.backgroundColor = UIColor.init(red: 17/255, green: 20/255, blue: 28/255, alpha: 1)
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

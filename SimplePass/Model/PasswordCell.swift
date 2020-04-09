@@ -18,5 +18,8 @@ class PasswordCell: UITableViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
+        if traitCollection.userInterfaceStyle == .dark {
+            backgroundColor = UIColor.init(red: 17/255, green: 20/255, blue: 28/255, alpha: 1)
+        }
     }
 }
