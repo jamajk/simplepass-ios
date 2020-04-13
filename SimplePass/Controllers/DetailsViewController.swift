@@ -55,15 +55,13 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .darkModeBlue
     }
     
     override func viewWillAppear(_ animated: Bool) {
         nameLabel.text = gotDetails?.name ?? "error"
         userLabel.text = gotDetails?.username ?? "error"
         passLabel.text = gotDetails?.password ?? "error"
-        if traitCollection.userInterfaceStyle == .dark {
-        view.backgroundColor = UIColor.init(red: 17/255, green: 20/255, blue: 28/255, alpha: 1)
-        }
     }
     
     required init?(coder: NSCoder) {

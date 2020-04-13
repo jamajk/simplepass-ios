@@ -23,6 +23,8 @@ class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        tableView.backgroundColor = .darkModeBlue
+        view.backgroundColor = .darkModeBlue
         
         let alert = UIAlertController(title: "Empty password list", message: "There are no passwords to show", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: "Default action"), style: .default, handler: {action in self.navigationController?.popViewController(animated: true)}))
@@ -34,10 +36,6 @@ class ListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
-        if traitCollection.userInterfaceStyle == .dark {
-            tableView.backgroundColor = UIColor.init(red: 17/255, green: 20/255, blue: 28/255, alpha: 1)
-            view.backgroundColor = UIColor.init(red: 17/255, green: 20/255, blue: 28/255, alpha: 1)
-        }
     }
 
     

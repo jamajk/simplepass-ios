@@ -56,17 +56,12 @@ class EditingPasswordController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .darkModeBlue
         nameField.text = name
         userField.text = username
         passField.text = password
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
         view.addGestureRecognizer(tap)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        if traitCollection.userInterfaceStyle == .dark {
-        view.backgroundColor = UIColor.init(red: 17/255, green: 20/255, blue: 28/255, alpha: 1)
-        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

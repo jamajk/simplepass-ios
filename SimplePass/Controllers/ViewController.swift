@@ -69,6 +69,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .darkModeBlue
         passArray.decode()
         lenLabel.text = String(gen.length)
         passLabel.isHidden = true
@@ -78,15 +79,8 @@ class ViewController: UIViewController {
         infoLabel.text = "  "
         colorView.layer.cornerRadius = 10
         genButton.layer.cornerRadius = 5
-        
-        
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        if traitCollection.userInterfaceStyle == .dark {
-            view.backgroundColor = UIColor.init(red: 17/255, green: 20/255, blue: 28/255, alpha: 1)
-        }
-    }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     super.prepare(for: segue, sender: sender)

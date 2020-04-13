@@ -199,7 +199,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.066666666666666666" green="0.078431372549019607" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="25r-LU-Aqw" secondAttribute="trailing" id="7LH-tf-Fel"/>
                             <constraint firstItem="1El-hb-9Vt" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="B98-iU-dk6"/>
