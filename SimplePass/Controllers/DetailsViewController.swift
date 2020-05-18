@@ -24,6 +24,7 @@ class DetailsViewController: UIViewController {
     var gotDetails: Password?
     var delegate: backComm?
     var number: Int?
+    var blurEffectView: UIVisualEffectView!
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var userLabel: UILabel!
@@ -56,6 +57,23 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .darkModeBlue
+        let blurEffect = UIBlurEffect(style: .regular)
+        blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        blurEffectView.alpha = 0
+        view.addSubview(blurEffectView)
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(appInactiveAction), name: UIApplication.willResignActiveNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(appActiveAction), name: UIApplication.didBecomeActiveNotification, object: nil)
+    }
+
+    @objc func appInactiveAction() {
+        showBlur()
+    }
+    
+    @objc func appActiveAction() {
+        hideBlur()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -78,7 +96,23 @@ class DetailsViewController: UIViewController {
         controller.index = number
         controller.delegate = self
     }
-
+    
+    private func showBlur() {
+        print("blur show")
+        view.bringSubviewToFront(blurEffectView)
+        UIView.animate(withDuration: 0.3, animations: {
+            self.blurEffectView.alpha = 1
+        })
+    }
+    
+    private func hideBlur() {
+        print("blur hide")
+        UIView.animate(withDuration: 0.3, animations: {
+            self.blurEffectView.alpha = 0
+        },completion: {_ in
+            self.view.sendSubviewToBack(self.blurEffectView)
+        })
+    }
 }
 
 extension DetailsViewController: EditUpdate {
