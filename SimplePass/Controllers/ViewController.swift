@@ -69,6 +69,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.setNavigationBarHidden(true, animated: true)
         view.backgroundColor = .darkModeBlue
         passArray.decode()
         lenLabel.text = String(gen.length)
