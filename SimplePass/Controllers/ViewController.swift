@@ -69,7 +69,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.setNavigationBarHidden(true, animated: true)
         view.backgroundColor = .darkModeBlue
         passArray.decode()
         lenLabel.text = String(gen.length)
@@ -80,6 +79,10 @@ class ViewController: UIViewController {
         infoLabel.text = "  "
         colorView.layer.cornerRadius = 10
         genButton.layer.cornerRadius = 5
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
     
